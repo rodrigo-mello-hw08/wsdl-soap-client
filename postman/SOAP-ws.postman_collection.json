@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "1bef4816-f875-417c-8736-7acb67856fc0",
+		"name": "SOAP-ws",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13364808",
+		"_collection_link": "https://orange-zodiac-520069.postman.co/workspace/projetos-pessoais~5b7595d5-53a0-4c0b-9dbe-3917af406a9e/collection/13364808-1bef4816-f875-417c-8736-7acb67856fc0?action=share&source=collection_link&creator=13364808"
+	},
+	"item": [
+		{
+			"name": "checar validade",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "#POST",
+						"type": "text"
+					},
+					{
+						"key": "#MethodName",
+						"value": "#POST",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:loan=\"http://www.javatechie.com/spring/soap/api/loanEligibility\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <loan:CustomerRequest>\r\n         <loan:customerName>João da Silva</loan:customerName>\r\n         <loan:age>35</loan:age>\r\n         <loan:yearlyIncome>2000000</loan:yearlyIncome>\r\n         <loan:cibilScore>700</loan:cibilScore>\r\n         <loan:employmentMode>CLT</loan:employmentMode>\r\n      </loan:CustomerRequest>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

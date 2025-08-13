@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "checar validade",
+			"name": "web-server validar cliente",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {
 					"content-type": true
@@ -51,6 +51,53 @@
 					"port": "8080",
 					"path": [
 						"ws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verificar cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "SOAPAction",
+						"value": "#POST",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "#MethodName",
+						"value": "#POST",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeDoCliente\": \"João da Silva\",\r\n    \"idade\": 10,\r\n    \"entrada\": 2000000,\r\n    \"score\":\"700\", \r\n    \"modeloDeTrabalho\": \"CLT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/elegibilidade",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"elegibilidade"
 					]
 				}
 			},
